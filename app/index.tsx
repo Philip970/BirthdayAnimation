@@ -1,7 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import Letter from "@/components/letter";
-import { ThemedText } from "@/components/ThemedText";
+import { View } from "react-native";
 import Message from "@/components/message";
 
 const index = () => {

@@ -1,11 +1,5 @@
 import { useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextProps,
-  TextStyle,
-  useWindowDimensions,
-} from "react-native";
+import { StyleSheet, TextStyle, useWindowDimensions } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -62,7 +56,7 @@ const Letter = ({ value, animation = "NONE", style }: Props) => {
         } else if (animation === "TRANSLATEX") {
           translateX.value = withRepeat(
             withSequence(
-              withTiming(-2, { duration: 2000 }),
+              withTiming(-4, { duration: 2000 }),
               withTiming(0, { duration: 2000 })
             ),
             -1,
@@ -71,7 +65,7 @@ const Letter = ({ value, animation = "NONE", style }: Props) => {
         } else if (animation === "TRANSLATEY") {
           translateY.value = withRepeat(
             withSequence(
-              withTiming(-2, { duration: 2000 }),
+              withTiming(4, { duration: 2000 }),
               withTiming(0, { duration: 2000 })
             ),
             -1,
@@ -84,8 +78,8 @@ const Letter = ({ value, animation = "NONE", style }: Props) => {
 
   const handlePress = () => {
     scale.value = withSequence(
-      withTiming(1.5, { duration: 200 }),
-      withTiming(1, { duration: 200 })
+      withTiming(1.5, { duration: 300 }),
+      withTiming(1, { duration: 300 })
     );
     const randomX = random(SCREEN_WIDTH / 4);
     const randomY = random(SCREEN_HEIGHT / 4);

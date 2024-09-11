@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import Letter from "./letter";
 import { ANIMATIONS, COLORS, FONTSIZES } from "@/constants";
+import { StyleSheet, View } from "react-native";
+import Letter from "./letter";
 
 type Props = {
   value: string;
@@ -10,15 +9,9 @@ type Props = {
 const Message = ({ value }: Props) => {
   const words = value.split(" ");
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View style={styles.container}>
       {words.map((word, index) => (
-        <View key={index} style={{ flexDirection: "row" }}>
+        <View key={index} style={styles.wordContainer}>
           {word.split("").map((letter, index) => (
             <Letter
               key={index}
@@ -38,4 +31,11 @@ const Message = ({ value }: Props) => {
 
 export default Message;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  wordContainer: { flexDirection: "row" },
+});
